@@ -1,0 +1,943 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>http</title></head><body><article class="markdown-body"><h4>
+<a id="user-content-从打开一个网址说起" class="anchor" href="#%E4%BB%8E%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E7%BD%91%E5%9D%80%E8%AF%B4%E8%B5%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>从打开一个网址说起</h4>
+
+<p>当在浏览器中输入一个网址的时候，浏览器会渲染出对应的网页的内容。作为web开发人员来说，应该知道这个过程：</p>
+
+<ol>
+<li>
+<p>当输入的一个网址为域名的时候，浏览器则根据本机的网关和DNS服务器来解析出访问的真正的IP地址。如果是直接访问IP则直接与服务器通信，发送请求。 请求原理简单如下：</p>
+
+<p><a href="///F://ASP.NET-source-code-analysis/assets/DNS%E8%AF%B7%E6%B1%82%E5%8E%9F%E7%90%86.png" target="_blank"><img src="///F://ASP.NET-source-code-analysis/assets/DNS%E8%AF%B7%E6%B1%82%E5%8E%9F%E7%90%86.png" alt="" style="max-width:100%;"></a>
+(此处只是简单表示下域名解析原理，解析过程比这个复杂的多。)</p>
+</li>
+<li><p>发送请求的时候会经历TCP三次握手过程（http也是基于TCP的协议），当TCP连接建立成功后，浏览器会根据http协议，把请求的内容封装成请求报文，发送给web服务器.</p></li>
+<li><p>服务器会根据请求的报文的内容，执行对应的程序和读取对应的文件，按照http协议的规则返回响应内容(包括header和body)。</p></li>
+<li><p>服务器根据响应头来解析响应的内容，完成html+css+js的渲染和执行。</p></li>
+</ol>
+
+<h4>
+<a id="user-content-http协议" class="anchor" href="#http%E5%8D%8F%E8%AE%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>http协议</h4>
+
+<blockquote>
+<p>HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。</p>
+</blockquote>
+
+<p>用简单的话来说，当客户端与服务器端通信的时候，需要传输的内容有（HTML 文件,js+css, 图片,文本, 查询结果等）,http协议把内容传输规范化。可以随便查看下一个http协议的内容：</p>
+
+<p><a href="/assets/jquery%E8%AF%B7%E6%B1%82.png" target="_blank"><img src="/assets/jquery%E8%AF%B7%E6%B1%82.png" alt="jquery请求" style="max-width:100%;"></a></p>
+
+<p>（上面的图是请求jqury的请求和响应信息）</p>
+
+<h5>
+<a id="user-content-请求的头信息" class="anchor" href="#%E8%AF%B7%E6%B1%82%E7%9A%84%E5%A4%B4%E4%BF%A1%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>请求的头信息</h5>
+
+<div class="highlight highlight-source-json"><pre>  GET /script/jquery.js HTTP/<span class="pl-c1">1.1</span>
+  Host: common.cnblogs.com
+  Connection: keep-alive
+  Pragma: no-cache
+  Cache-Control: no-cache
+  User-Agent: Mozilla/<span class="pl-c1">5.0</span> (Windows NT <span class="pl-c1">6.1</span>; WOW<span class="pl-c1">64</span>) AppleWebKit/<span class="pl-c1">537.36</span> (KHTML, like Gecko) Chrome/<span class="pl-c1">56.0</span>.<span class="pl-c1">2924.87</span> Safari/<span class="pl-c1">537.36</span>
+  Accept: */*
+  Referer: http://kb.cnblogs.com/page/<span class="pl-c1">130970</span>/
+  Accept-Encoding: gzip, deflate, sdch
+  Accept-Language: zh-CN,zh;q=<span class="pl-c1">0.8</span>,en;q=<span class="pl-c1">0.6</span>
+  Cookie: __gads=ID=e<span class="pl-c1">2</span>f<span class="pl-c1">30</span>d<span class="pl-c1">616</span>c<span class="pl-c1">5344</span>bf:T=<span class="pl-c1">1484287454</span>:S=ALNI_MY<span class="pl-c1">6</span>vTrW<span class="pl-c1">8</span>EvdzER-v<span class="pl-c1">1</span>nE-YnGJjxTzA; pgv_pvi=<span class="pl-c1">1271870464</span>; __utma=<span class="pl-c1">226521935.1402060598</span>.<span class="pl-c1">1484617348.1487768840</span>.<span class="pl-c1">1487819679.5</span>; __utmz=<span class="pl-c1">226521935.1487819679</span>.<span class="pl-c1">5.3</span>.utmcsr=bing|utmccn=(organic)|utmcmd=organic|utmctr=c%<span class="pl-c1">23</span>%<span class="pl-c1">20</span>Semaphore; _ga=GA<span class="pl-c1">1.2</span>.<span class="pl-c1">1402060598.1484617348</span></pre></div>
+
+<p>上面有几个重点的信息:</p>
+
+<ul>
+<li><p><strong>GET /script/jquery.js HTTP/1.1</strong> 这个代表请求的方法是GET(常用的有GET,POST,PUT,DELETE),请求的URI为 /script/jquery.js, HTTP的版本信息为1.1</p></li>
+<li><p><strong>Accept-Encoding:</strong>  是浏览器发给服务器,声明浏览器支持的编码类型</p></li>
+<li><p><strong>Referer:</strong> 告诉服务器我是从哪个页面链接过来的</p></li>
+<li><p><strong>User-Agent:</strong> 当前设备的一些信息</p></li>
+<li><p><strong>Cookie:</strong> 客户端存储的信息，一般是登录信息或者其它认证信息</p></li>
+</ul>
+
+<h5>
+<a id="user-content-响应头信息" class="anchor" href="#%E5%93%8D%E5%BA%94%E5%A4%B4%E4%BF%A1%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>响应头信息</h5>
+
+<div class="highlight highlight-source-json"><pre> HTTP/<span class="pl-c1">1.1</span> <span class="pl-c1">200</span> OK
+ Server: Tengine
+ Content-Type: application/javascript
+ Content-Length: <span class="pl-c1">33411</span>
+ Connection: keep-alive
+ Date: Wed, <span class="pl-c1">20</span> Jul <span class="pl-c1">2016</span> <span class="pl-c1">02</span>:<span class="pl-c1">26</span>:<span class="pl-c1">20</span> GMT
+ Vary: Accept-Encoding
+ Cache-Control: public,max-age=<span class="pl-c1">25920000</span>
+ Last-Modified: Fri, <span class="pl-c1">15</span> Feb <span class="pl-c1">2013</span> <span class="pl-c1">03</span>:<span class="pl-c1">06</span>:<span class="pl-c1">57</span> GMT
+ Content-Encoding: gzip
+ Via: cache<span class="pl-c1">14</span>.l<span class="pl-c1">2</span>cm<span class="pl-c1">12</span>[<span class="pl-c1">0</span>,<span class="pl-c1">200-0</span>,<span class="pl-ii">H</span>], cache<span class="pl-c1">10</span>.l<span class="pl-c1">2</span>cm<span class="pl-c1">12</span>[<span class="pl-c1">1</span>,<span class="pl-c1">0</span>], kunlun<span class="pl-c1">5</span>.cn<span class="pl-c1">199</span>[<span class="pl-c1">0</span>,<span class="pl-c1">200-0</span>,<span class="pl-ii">H</span>], kunlun<span class="pl-c1">9</span>.cn<span class="pl-c1">199</span>[<span class="pl-c1">0</span>,<span class="pl-c1">0</span>]
+ Age: <span class="pl-c1">19461677</span>
+ X-Cache: HIT TCP_MEM_HIT dirn:<span class="pl-c1">9</span>:<span class="pl-c1">763113955</span>
+ X-Swift-SaveTime: Fri, <span class="pl-c1">26</span> Aug <span class="pl-c1">2016</span> <span class="pl-c1">05</span>:<span class="pl-c1">18</span>:<span class="pl-c1">04</span> GMT
+ X-Swift-CacheTime: <span class="pl-c1">22712896</span>
+ Timing-Allow-Origin: *
+ EagleId: <span class="pl-c1">3</span>d<span class="pl-c1">9</span>a<span class="pl-c1">7e0914884432578382004</span>e</pre></div>
+
+<ul>
+<li><p><strong>HTTP/1.1 200 OK:</strong> 这上代表响应http版本和响应状态</p></li>
+<li><p><strong>Server:</strong> 代表响应的服务器的类型，此处为Tengine</p></li>
+<li><p><strong>Content-Type:</strong>响应的类型，此处是 application/javascript，即是js文件</p></li>
+<li><p><strong>Content-Length:</strong> 代表响应的字节数</p></li>
+<li><p><strong>Content-Encoding:</strong>内容的编码方式，此处为gzip</p></li>
+</ul>
+
+<p><strong>HTTP三点注意事项：</strong></p>
+
+<ul>
+<li><p>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</p></li>
+<li><p>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</p></li>
+<li><p>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</p></li>
+</ul>
+
+<h4>
+<a id="user-content-浏览器" class="anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>浏览器</h4>
+
+<h5>
+<a id="user-content-什么是浏览器" class="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B5%8F%E8%A7%88%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>什么是浏览器</h5>
+
+<p>看到http协议都是由Chrome浏览器生成和发送的，这里可以把浏览器简单的定义：</p>
+
+<blockquote>
+<p>浏览器是一个客户端程序，能够发送http协议、解析http响应、渲染html+css+js</p>
+</blockquote>
+
+<h5>
+<a id="user-content-捕获浏览器http协议" class="anchor" href="#%E6%8D%95%E8%8E%B7%E6%B5%8F%E8%A7%88%E5%99%A8http%E5%8D%8F%E8%AE%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>捕获浏览器Http协议</h5>
+
+<p>浏览器与服务器的通信是基于TCP，发送是请求相关的内容，服务端收到请求会进行解析。基于这个原理，可以用一个用程序监听一个端口，用浏览器访问这个端口（发送数据），来捕获请求的内容。搭建一个winform窗体如下：</p>
+
+<p><a href="/assets/%E7%9B%91%E6%8E%A7%E7%95%8C%E9%9D%A2.png" target="_blank"><img src="/assets/%E7%9B%91%E6%8E%A7%E7%95%8C%E9%9D%A2.png" alt="" style="max-width:100%;"></a></p>
+
+<p>当点击开启的时候，运行如下代码：</p>
+
+<pre lang="C\#"><code>      var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+      var endPoint = new IPEndPoint(IPAddress.Parse(this.txtIP.Text), int.Parse(txtPort.Text));
+      socket.Bind(endPoint);
+      socket.Listen(10);
+      if (isAutoOpen.Checked)
+      {
+         //使用默认的浏览器打开
+          System.Diagnostics.Process.Start("http://" + this.txtIP.Text + ":" + this.txtPort.Text);
+      }
+      ThreadPool.QueueUserWorkItem(r =&gt;
+      {
+          while (true)
+          {
+              var socketProx = socket.Accept(); //接收数据
+              var bytes = new byte[1024 * 1024];
+              var len = socketProx.Receive(bytes, 0, bytes.Length, SocketFlags.None);//获得长度
+              var httpHeader = Encoding.Default.GetString(bytes, 0, len);//把二进制的数据转成文本
+              SetText(httpHeader);//内容的显示
+          }
+
+      });
+</code></pre>
+
+<p>运行程序，会自动打开默认的浏览器，获得当前的ip和随机生成的接口，运行的结果如下：</p>
+
+<p><a href="/assets/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE.png" target="_blank"><img src="/assets/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE.png" alt="" style="max-width:100%;"></a></p>
+
+<p><a href="/assets/%E7%9B%91%E6%8E%A7%E8%BF%90%E8%A1%8C%E7%95%8C%E9%9D%A2.png" target="_blank"><img src="/assets/%E7%9B%91%E6%8E%A7%E8%BF%90%E8%A1%8C%E7%95%8C%E9%9D%A2.png" alt="监控运行界面" style="max-width:100%;"></a></p>
+
+<p>监控获得内容如下：</p>
+
+<div class="highlight highlight-source-json"><pre>    GET / HTTP/<span class="pl-c1">1.1</span>
+    Host: <span class="pl-c1">10.28</span>.<span class="pl-c1">11.43</span>:<span class="pl-c1">55882</span>
+    Connection: keep-alive
+    Upgrade-Insecure-Requests: <span class="pl-c1">1</span>
+    User-Agent: Mozilla/<span class="pl-c1">5.0</span> (Windows NT <span class="pl-c1">6.1</span>; WOW<span class="pl-c1">64</span>) AppleWebKit/<span class="pl-c1">537.36</span> (KHTML, like Gecko) Chrome/<span class="pl-c1">56.0</span>.<span class="pl-c1">2924.87</span> Safari/<span class="pl-c1">537.36</span>
+    Accept: text/html,application/xhtml+xml,application/xml;q=<span class="pl-c1">0.9</span>,image/webp,*/*;q=<span class="pl-c1">0.8</span>
+    Accept-Encoding: gzip, deflate, sdch
+    Accept-Language: zh-CN,zh;q=<span class="pl-c1">0.8</span>,en;q=<span class="pl-c1">0.6</span> </pre></div>
+
+<p>捕获的http的信息，与上面谈到的信息格式是相同的。</p>
+
+<h5>
+<a id="user-content-响应请求的内容" class="anchor" href="#%E5%93%8D%E5%BA%94%E8%AF%B7%E6%B1%82%E7%9A%84%E5%86%85%E5%AE%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>响应请求的内容</h5>
+
+<p>当请求过来的时候，基于上面的代码，可以给浏览器发送一个信息，在while块里面添加代码：</p>
+
+<pre lang="C\#"><code>   while (true)
+   {
+       var socketProx = socket.Accept(); //接收数据
+       var bytes = new byte[1024 * 1024];
+       var len = socketProx.Receive(bytes, 0, bytes.Length, SocketFlags.None);
+       var httpHeader = Encoding.Default.GetString(bytes, 0, len);
+       SetText(httpHeader);
+
+       if (!string.IsNullOrEmpty(httpHeader))
+       {
+           var httpResponse = "&lt;h1&gt;Hello Http&lt;/h1&gt;";
+           var sentBytes = Encoding.Default.GetBytes(httpResponse);
+           socketProx.Send(sentBytes, 0, sentBytes.Length, SocketFlags.None);
+           socketProx.Shutdown(SocketShutdown.Both);
+       }
+
+   }
+</code></pre>
+
+<p>用Chrome请求结果为：<br>
+<a href="/assets/helloHttp%E7%BB%93%E6%9E%9C.png" target="_blank"><img src="/assets/helloHttp%E7%BB%93%E6%9E%9C.png" alt="helloHttp" style="max-width:100%;"></a></p>
+
+<p>用火狐请求的结果为：</p>
+
+<p><a href="/assets/FireFox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE.png" target="_blank"><img src="/assets/FireFox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE.png" alt="FireFox浏览器访问" style="max-width:100%;"></a></p>
+
+<p>在面对上面的两个浏览器的请求结果时候，可以看到，此时程序已经和浏览器进行了通信。造成上面的两个结果的不同，是没有指定响应的内容，浏览器按照默认的格式进行渲染，所以Chrome认为是html，而FireFox认为是text。</p>
+
+<p>避免上面的结果，可以响应的时候把返回的内容进行约束，即：Content-Type属性。把响应的内容修改如下：</p>
+
+<div class="highlight highlight-source-cs"><pre>    <span class="pl-k">var</span> <span class="pl-en">httpResponse </span>= <span class="pl-s"><span class="pl-pds">"</span>&lt;h1&gt;Hello Http&lt;/h1&gt;<span class="pl-pds">"</span></span>;
+    <span class="pl-k">var</span> <span class="pl-en">sentBytes </span>= <span class="pl-en">Encoding.Default.GetBytes</span>(httpResponse);
+
+    <span class="pl-k">var</span> <span class="pl-en">sb </span>= <span class="pl-k">new</span> <span class="pl-en">StringBuilder</span>();
+    <span class="pl-en">sb.AppendLine</span>("HTTP/1.1 200 OK");
+    <span class="pl-en">sb.AppendLine</span>("Date:" + DateTime.Now);
+    <span class="pl-en">sb.AppendLine</span>("Content-Type:text/html");
+    <span class="pl-en">sb.AppendLine</span>("Content-Length:" + sentBytes.Length);
+    <span class="pl-en">sb.AppendLine</span>();
+    <span class="pl-k">var</span> <span class="pl-en">sentHeader </span>= <span class="pl-en">Encoding.Default.GetBytes</span>(sb.<span class="pl-en">ToString</span>());
+    <span class="pl-en">socketProx.Send</span>(sentHeader, 0, sentHeader.Length, SocketFlags.None);<span class="pl-c">//发送内容前，先发送响应的头文件 </span>
+
+    <span class="pl-en">socketProx.Send</span>(sentBytes, 0, sentBytes.Length, SocketFlags.None);
+    <span class="pl-en">socketProx.Shutdown</span>(SocketShutdown.Both); </pre></div>
+
+<p>修改后，fireFox响应结果如下：</p>
+
+<p><a href="/assets/FireFox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE1.png" target="_blank"><img src="/assets/FireFox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE1.png" alt="" style="max-width:100%;"></a></p>
+
+<h4>
+<a id="user-content-简单的示例-----简单文件服务器" class="anchor" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E7%A4%BA%E4%BE%8B-----%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>简单的示例 --- 简单文件服务器</h4>
+
+<p>利用上面所述的demo，可以简单的扩展成一个简单的文件服务器。当程序启动的时候，读取当前的目录所有的文件信息转成html信息,发送给浏览器。运行结果如下 ：</p>
+
+<p><a href="/assets/fileServer.png" target="_blank"><img src="/assets/fileServer.png" alt="fileServer" style="max-width:100%;"></a></p>
+
+<p>这样可以简单做一个服务器，使用ajax和文件分享都是可以的。git地址：<a href="https://github.com/fuwei199006/DemoLib/tree/master/Http%E5%8D%8F%E8%AE%AE/Tools.Server">https://github.com/fuwei199006/DemoLib/tree/master/Http%E5%8D%8F%E8%AE%AE/Tools.Server</a>  </p>
+
+<p>写于 2017.03.02 </p>
+</article></body></html>
